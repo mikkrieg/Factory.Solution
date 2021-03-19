@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine
+
+<h1>Edit: @Model.Model</h1>
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.MachineId)
+  @Html.LabelFor(model => model.Model)
+  @Html.TextBoxFor(model => model.Model, new { @class="form-control" })
+
+  @Html.LabelFor(model => model.MinEngineerCount)
+  @Html.TextBoxFor(model => model.MinEngineerCount, new { @type="number", @min="1", @class="form-control"})
+
+  @Html.Label("Select an engineer to start working:")
+  @Html.DropDownList("EngineerId")
+  <input type="submit" value="Edit" class="btn btn-warning"/>
+}
+
+<button class="btn btn-dark">@Html.ActionLink("Go back", "Details", new { id = @Model.MachineId })</button>

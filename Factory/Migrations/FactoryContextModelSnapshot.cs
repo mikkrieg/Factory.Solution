@@ -60,11 +60,11 @@ namespace Factory.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int>("MinEngineerCount")
+                        .HasColumnType("int");
+
                     b.Property<string>("Model")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<int>("minEngineerCount")
-                        .HasColumnType("int");
 
                     b.HasKey("MachineId");
 
