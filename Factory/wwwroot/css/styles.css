@@ -3,6 +3,15 @@ button>a, a:hover{
   text-decoration: none;
 }
 
+li>a{
+  color: #000;
+}
+
+li>a:hover{
+  color: #000;
+  text-decoration: underline;
+}
+
 a {
   display: inline-block;     
   position: relative;    

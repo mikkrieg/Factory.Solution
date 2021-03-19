@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Engineer
+
+<h1 class="text-center">Engineer: @Model.Name</h1>
+<h3>Level: @Model.Level</h3>
+
+@if (@Model.JoinEntities.Count == 0)
+{
+  <h4>@Model.Name is not currently working on any machines</h4>
+}
+
+<h3>Machines:</h3>
+<ol>
+  @foreach (var join in Model.JoinEntities)
+  {
+    <li>@join.Machine.Model</li>
+  }
+</ol>
+
+<button class="btn btn-dark">@Html.ActionLink("Edit engineer", "Edit")</button>
+<button class="btn btn-danger">@Html.ActionLink("Delete engineer", "Delete", new { id = @Model.EngineerId })</button>
+<button class="btn btn-dark">@Html.ActionLink("Add machine", "AddMachine", new { id = @Model.EngineerId })</button>
+<button class="btn btn-dark">@Html.ActionLink("Back home", "Index")</button>
