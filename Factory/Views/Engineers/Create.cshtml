@@ -12,6 +12,9 @@
 
   @Html.LabelFor(model => model.Level)
   @Html.DropDownListFor(model => model.Level, new SelectList(Enum.GetValues(typeof(Level))), "Select Level:", new { @class = "form-control", @required="required"})
+
+  @Html.Label("Select Machine Model: ")
+  @Html.DropDownList("MachineId")
   <input type="submit" value="Create" class="btn btn-success"/>
 }
 

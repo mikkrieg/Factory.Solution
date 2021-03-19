@@ -5,6 +5,7 @@
 @using Factory.Models
 @model Factory.Models.Engineer
 
+<h1>Edit: @Model.Name</h1>
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.EngineerId)
