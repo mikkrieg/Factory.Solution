@@ -15,17 +15,18 @@
 {
   <h3>No Machines have been created yet</h3>
 }
-
+<h3>Engineers: </h3>
 <ol>
   @foreach (Engineer engineer in @Model["Engineers"])
   {
     <li>@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId })</li>
   }
 </ol>
+<h3>Machines:</h3>
 <ol>
   @foreach (Machine machine in @Model["Machines"])
   {
-    <li>@Html.ActionLink($"{machine.Model}", "Details", new { id = machine.MachineId })</li>
+    <li>@Html.ActionLink($"{machine.Model}", "Details", "Machines", new { id = machine.MachineId })</li>
   }
 </ol>
 

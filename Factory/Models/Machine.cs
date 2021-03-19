@@ -6,7 +6,7 @@ namespace Factory.Models
   {
     public string Model { get; set; }
     public int MachineId { get; set; }
-    public string minEngineerCount { get; set; }
+    public int minEngineerCount { get; set; }
 
     public Machine()
     {

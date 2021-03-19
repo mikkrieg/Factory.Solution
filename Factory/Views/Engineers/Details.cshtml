@@ -11,14 +11,22 @@
 {
   <h4>@Model.Name is not currently working on any machines</h4>
 }
+else
+{
+  <h3>Machines:</h3>
+  <ol>
+    @foreach (var join in Model.JoinEntities)
+    {
+      <li>@join.Machine.Model</li>
+      @using (Html.BeginForm("DeleteMachine", "Engineers"))
+      {
+        @Html.Hidden("joinId", @join.EngineerMachineId)
+        <input type="submit" value="Delete" class="btn btn-danger"/>
+      }
+    }
+  </ol>
+}
 
-<h3>Machines:</h3>
-<ol>
-  @foreach (var join in Model.JoinEntities)
-  {
-    <li>@join.Machine.Model</li>
-  }
-</ol>
 
 <button class="btn btn-dark">@Html.ActionLink("Edit engineer", "Edit", new { id = @Model.EngineerId })</button>
 <button class="btn btn-danger">@Html.ActionLink("Delete engineer", "Delete", new { id = @Model.EngineerId })</button>
