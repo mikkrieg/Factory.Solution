@@ -20,7 +20,7 @@
   }
 </ol>
 
-<button class="btn btn-dark">@Html.ActionLink("Edit engineer", "Edit")</button>
+<button class="btn btn-dark">@Html.ActionLink("Edit engineer", "Edit", new { id = @Model.EngineerId })</button>
 <button class="btn btn-danger">@Html.ActionLink("Delete engineer", "Delete", new { id = @Model.EngineerId })</button>
 <button class="btn btn-dark">@Html.ActionLink("Add machine", "AddMachine", new { id = @Model.EngineerId })</button>
 <button class="btn btn-dark">@Html.ActionLink("Back home", "Index")</button>
