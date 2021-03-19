@@ -11,7 +11,7 @@
   @Html.HiddenFor(model => model.MachineId)
   @Html.Label("Select an engineer")
   @Html.DropDownList("EngineerId")
-  <input type="submit" value="Edit" class="btn btn-warning"/>
+  <input type="submit" value="Add" class="btn btn-warning"/>
 }
 
 <button class="btn btn-dark">@Html.ActionLink("Go back", "Details", new { id = @Model.MachineId })</button>
