@@ -1,0 +1,33 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Factory.Models
+
+<h1 class="text-center">Home</h1>
+
+@if(Model["Engineers"].Count == 0)
+{
+  <h3>No engineers have been created yet</h3>
+}
+
+@if(Model["Machines"].Count == 0)
+{
+  <h3>No Machines have been created yet</h3>
+}
+
+<ol>
+  @foreach (Engineer engineer in @Model["Engineers"])
+  {
+    <li>@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId })</li>
+  }
+</ol>
+<ol>
+  @foreach (Machine machine in @Model["Machines"])
+  {
+    <li>@Html.ActionLink($"{machine.Model}", "Details", new { id = machine.MachineId })</li>
+  }
+</ol>
+
+<button class="btn btn-dark">@Html.ActionLink("Create engineer", "Create")</button>
+<button class="btn btn-dark">@Html.ActionLink("Create machine", "Create", "Machines")</button>
