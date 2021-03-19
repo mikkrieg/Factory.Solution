@@ -15,4 +15,11 @@ namespace Factory.Models
 
     public virtual ICollection<EngineerMachine> JoinEntities { get; set; }
   }
+
+  public enum Level
+  {
+    Junior,
+    Intermediate,
+    Senior
+  }
 }
