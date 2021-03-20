@@ -41,6 +41,7 @@ _This project is an MVC program that uses entity migrations. It is for a factory
 
 * _Styling is not responsive for large or small screens_
 * _Still figuring out how to style select box in machine and engineer creation page_
+* _Styling is incomplete_
 
 ## License
 
