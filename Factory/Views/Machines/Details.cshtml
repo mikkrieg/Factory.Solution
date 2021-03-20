@@ -27,8 +27,18 @@ else
   </ol>
 }
 
+<div class="row">
+  <div class="col-2 offset-2">
+    <button class="btn btn-dark">@Html.ActionLink("Edit machine", "Edit", new { id = @Model.MachineId })</button>
+  </div>
+  <div class="col-2">
+    <button class="btn btn-danger">@Html.ActionLink("Delete machine", "Delete", new { id = @Model.MachineId })</button>
+  </div>
+  <div class="col-2">
+    <button class="btn btn-dark">@Html.ActionLink("Add engineer", "AddEngineer", new { id = @Model.MachineId })</button>
+  </div>
+  <div class="col-2">
+      <button class="btn btn-dark">@Html.ActionLink("Back home", "Index", "Engineers")</button>
+  </div>
+</div>
 
-<button class="btn btn-dark">@Html.ActionLink("Edit machine", "Edit", new { id = @Model.MachineId })</button>
-<button class="btn btn-danger">@Html.ActionLink("Delete machine", "Delete", new { id = @Model.MachineId })</button>
-<button class="btn btn-dark">@Html.ActionLink("Add engineer", "AddEngineer", new { id = @Model.MachineId })</button>
-<button class="btn btn-dark">@Html.ActionLink("Back home", "Index", "Engineers")</button>

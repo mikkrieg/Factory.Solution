@@ -21,8 +21,8 @@ button>a {
   display: inline-block;     
   position: relative;    
   z-index: 1;     
-  padding: 2em;     
-  margin: -2em; 
+  padding: .8em;     
+  margin: -.8em; 
 }
 
 footer {
@@ -32,6 +32,24 @@ footer {
   width:100%;
   color:#000;
   padding:8px;
+}
+
+h1 {
+  margin-top: 10%;
+}
+
+/* Splash styling */
+.main-btn{
+  display: block;
+  margin: auto;
+  padding: 25px 35px;
+  font-size: 2em;
+  margin-top: 20px;
+}
+
+.splash-h1
+{
+  margin-top: 25%;
 }
 
 /* Home styling */
@@ -47,12 +65,10 @@ footer {
 }
 
 /* Create styling */
-.create-h1{
-  margin-top: 10%;
-}
-
 .create-btn{
   display: block;
   margin: auto;
   margin-top: 2%;
 }
+
+/* Detail styling */
