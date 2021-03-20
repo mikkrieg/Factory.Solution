@@ -1,44 +1,51 @@
 @{
   Layout = "_Layout";
 }
-
+<link href="~/css/index.css" type="text/css" rel="stylesheet">
 @using Factory.Models
 
-<h1 class="text-center">Home</h1>
-
-@if(Model["Engineers"].Count == 0)
-{
-  <h3>No engineers have been created yet</h3>
-}
-else
-{
-  <h3>Engineers: </h3>
-  <ol>
-  @foreach (Engineer engineer in @Model["Engineers"])
-  {
-    <li>@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId })</li>
-  }
-  </ol>
-}
-
-@if(Model["Machines"].Count == 0)
-{
-  <h3>No Machines have been created yet</h3>
-}
-else
-{
-  <h3>Machines:</h3>
-    
-  <ol>
-    @foreach (Machine machine in @Model["Machines"])
+<h1 class="text-center" id="home-h1">Home</h1>
+<div class="row">
+  <div class="col-3 offset-3">
+    @if(Model["Engineers"].Count == 0)
     {
-      <li>@Html.ActionLink($"{machine.Model}", "Details", "Machines", new { id = machine.MachineId })</li>
+      <h3 class="text-center">No engineers</h3>
     }
-  </ol>
-}
+    else
+    {
+      <h3 class="text-center">Engineers: </h3>
+      <ol>
+      @foreach (Engineer engineer in @Model["Engineers"])
+      {
+        <li>@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId })</li>
+      }
+      </ol>
+    }
+  </div>
+  <div class="col-3">
+    @if(Model["Machines"].Count == 0)
+    {
+      <h3 class="text-center">No machines</h3>
+    }
+    else
+    {
+      <h3 class="text-center">Machines:</h3>
+      <ol>
+        @foreach (Machine machine in @Model["Machines"])
+        {
+          <li>@Html.ActionLink($"{machine.Model}", "Details", "Machines", new { id = machine.MachineId })</li>
+        }
+      </ol>
+    }
+  </div>
+</div>
 
+<div class="row">
+  <div class="col-2 offset-4">
+    <button class="btn btn-dark create-button">@Html.ActionLink("Create engineer", "Create")</button>
+  </div>
+  <div class="col-2">
+    <button class="btn btn-dark create-button">@Html.ActionLink("Create machine", "Create", "Machines")</button>
+  </div>
+</div>
 
-
-
-<button class="btn btn-dark">@Html.ActionLink("Create engineer", "Create")</button>
-<button class="btn btn-dark">@Html.ActionLink("Create machine", "Create", "Machines")</button>

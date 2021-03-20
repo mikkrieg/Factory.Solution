@@ -1,3 +1,8 @@
+/* Global Stylings */
+
+body {
+  background-color: #f5b8b8;
+}
 button>a, a:hover{
   color: #fff;
   text-decoration: none;
@@ -23,8 +28,31 @@ button>a {
 footer {
   position:fixed;
   bottom:0;
-  left: 43.5%;
+  left: 46%;
   width:100%;
   color:#000;
   padding:8px;
+}
+
+/* Home styling */
+#home-h1
+{
+  font-size: 3em;
+  margin-top: 20%;
+}
+
+.create-button
+{
+  padding: 6px 20px;
+}
+
+/* Create styling */
+.create-h1{
+  margin-top: 10%;
+}
+
+.create-btn{
+  display: block;
+  margin: auto;
+  margin-top: 2%;
 }

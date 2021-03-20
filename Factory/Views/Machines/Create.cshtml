@@ -4,21 +4,24 @@
 
 @model Factory.Models.Machine
 
-<h1 class="text-center">Create Machine</h1>
+<h1 class="text-center create-h1">Create Machine</h1>
+<div class="row mt-5">
+  <div class="col-6 offset-3">
+    @using (Html.BeginForm())
+    {
+      @Html.LabelFor(model => model.Model)
+      @Html.TextBoxFor(model => model.Model, new { @class="form-control", @required="required" })
 
-@using (Html.BeginForm())
-{
-  @Html.LabelFor(model => model.Model)
-  @Html.TextBoxFor(model => model.Model, new { @class="form-control", @required="required" })
+      @Html.LabelFor(model => model.MinEngineerCount)
+      @Html.TextBoxFor(model => model.MinEngineerCount, new { @type="number", @class="form-control mb-3", @required="required", @min="1" })
+      
 
-  @Html.LabelFor(model => model.MinEngineerCount)
-  @Html.TextBoxFor(model => model.MinEngineerCount, new { @type="number", @class="form-control", @required="required", @min="1" })
-  
+      @Html.Label("Select an engineer to start working: ")
+      @Html.DropDownList("EngineerId")
 
-  @Html.Label("Select an engineer to start working: ")
-  @Html.DropDownList("EngineerId")
+      <input type="submit" value="Create" class="btn btn-success create-btn"/>
+    }
+  </div>
+</div>
 
-  <input type="submit" value="Create" class="btn btn-success"/>
-}
-
-<button class="btn btn-dark">@Html.ActionLink("Back to home", "Index", "Engineers")</button>
+<button class="btn btn-dark create-btn">@Html.ActionLink("Back to home", "Index", "Engineers")</button>
